@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
+
+/* root inisilize */
+:root
+{
+    --primary_col: #31E1F7;
+    --white_col: #fff;
+    --white_gray: #eee;
+    --dark_col: #040303;
+    --red_gray: #575757;
+}
+
+/* global css */
+*
+{
+    margin: 0;
+    padding: 0;
+    color: var(--dark_col);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    background-color: var(--primary_col);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.calender_box
+{
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--white_col);
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.calender_box header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    border-bottom: 1px solid var(--dark-col);
+}
+header .month_name
+{
+    font-size: 24px;
+    font-weight: 500;
+}
+header .lr_icons i
+{
+    margin-left: 20px;
+    padding: 3px;
+    cursor: pointer;
+    color: rgb(215, 215, 215);
+}
+header .lr_icons i:hover
+{
+    color: var(--dark_col);
+}
+
+.calender
+{
+    margin: 25px 0 15px;
+}
+.calender ul
+{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.calender ul li
+{
+    position: relative;
+    width: calc(100% / 7);
+}
+.calender .weeks li
+{
+    font-weight: 500;
+}
+.calender .days
+{
+    margin-bottom: 20px;
+}
+.calender .days li
+{
+    z-index: 1;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.days li.inactive
+{
+    color: #aaa;
+}
+.days li.active
+{
+    color: var(--white_col);
+}
+.calender .days li::before
+{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    border-radius: 50%;
+    z-index: -1;
+}
+.days li:hover::before
+{
+    background-color: #f2f2f2;
+}
+.days li.active::before
+{
+    background-color: var(--primary_col);
+}
